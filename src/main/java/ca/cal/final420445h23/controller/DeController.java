@@ -20,6 +20,7 @@ public class DeController {
     @PostMapping("/getvalue/{nombredeface}")
     @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<De> addNewDe(@PathVariable("nombredeface") int nombredeface) {
+        System.out.printf("Bonjour");
         return deService.addNewDe(nombredeface).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
 
